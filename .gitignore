@@ -1,0 +1,11 @@
+node_modules
+
+.idea/
+
+.DS_Store
+
+.vscode/
+
+/docs/.vuepress/dist
+
+package-lock.json

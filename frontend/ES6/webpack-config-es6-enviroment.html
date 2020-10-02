@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>基于webpack的编译ES6的环境配置 | YoungLe的博客</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="记录学习路上的点点滴滴">
+    <link rel="preload" href="/assets/css/0.styles.26c94b8f.css" as="style"><link rel="preload" href="/assets/js/app.1bdf300f.js" as="script"><link rel="preload" href="/assets/js/2.82349a55.js" as="script"><link rel="preload" href="/assets/js/34.d45fb76a.js" as="script"><link rel="prefetch" href="/assets/js/10.6cc9b3f4.js"><link rel="prefetch" href="/assets/js/11.bbed2d26.js"><link rel="prefetch" href="/assets/js/12.bc055c47.js"><link rel="prefetch" href="/assets/js/13.00f6792f.js"><link rel="prefetch" href="/assets/js/14.bfaa6883.js"><link rel="prefetch" href="/assets/js/15.760f6750.js"><link rel="prefetch" href="/assets/js/16.7d3ea788.js"><link rel="prefetch" href="/assets/js/17.5a06d58d.js"><link rel="prefetch" href="/assets/js/18.e14a7fca.js"><link rel="prefetch" href="/assets/js/19.cc576287.js"><link rel="prefetch" href="/assets/js/20.85987309.js"><link rel="prefetch" href="/assets/js/21.07415e4a.js"><link rel="prefetch" href="/assets/js/22.d29797ef.js"><link rel="prefetch" href="/assets/js/23.1955b7f3.js"><link rel="prefetch" href="/assets/js/24.78e02f69.js"><link rel="prefetch" href="/assets/js/25.0c13be5e.js"><link rel="prefetch" href="/assets/js/26.9b3f496e.js"><link rel="prefetch" href="/assets/js/27.1d7bfdbb.js"><link rel="prefetch" href="/assets/js/28.b7ab2e46.js"><link rel="prefetch" href="/assets/js/29.756db6fc.js"><link rel="prefetch" href="/assets/js/3.77baa758.js"><link rel="prefetch" href="/assets/js/30.095c40e0.js"><link rel="prefetch" href="/assets/js/31.509ba86e.js"><link rel="prefetch" href="/assets/js/32.609d4df3.js"><link rel="prefetch" href="/assets/js/33.c9ee8cff.js"><link rel="prefetch" href="/assets/js/35.dc4a4015.js"><link rel="prefetch" href="/assets/js/36.4c14807d.js"><link rel="prefetch" href="/assets/js/37.faa6d4aa.js"><link rel="prefetch" href="/assets/js/38.7976991e.js"><link rel="prefetch" href="/assets/js/39.08e9ac63.js"><link rel="prefetch" href="/assets/js/4.d729705c.js"><link rel="prefetch" href="/assets/js/40.b4692119.js"><link rel="prefetch" href="/assets/js/41.24ba5520.js"><link rel="prefetch" href="/assets/js/42.53d91651.js"><link rel="prefetch" href="/assets/js/43.213c1b8e.js"><link rel="prefetch" href="/assets/js/44.b762d3e6.js"><link rel="prefetch" href="/assets/js/45.24076f7e.js"><link rel="prefetch" href="/assets/js/46.cf7ddf0a.js"><link rel="prefetch" href="/assets/js/47.972c7130.js"><link rel="prefetch" href="/assets/js/48.112dbf31.js"><link rel="prefetch" href="/assets/js/49.1984dfaf.js"><link rel="prefetch" href="/assets/js/5.3712046a.js"><link rel="prefetch" href="/assets/js/50.28485bdb.js"><link rel="prefetch" href="/assets/js/51.cef03a47.js"><link rel="prefetch" href="/assets/js/52.b0d637f7.js"><link rel="prefetch" href="/assets/js/53.83955275.js"><link rel="prefetch" href="/assets/js/54.b117ee9a.js"><link rel="prefetch" href="/assets/js/55.d20659ca.js"><link rel="prefetch" href="/assets/js/56.4f8523e9.js"><link rel="prefetch" href="/assets/js/57.ef6c07b9.js"><link rel="prefetch" href="/assets/js/58.07ea91a2.js"><link rel="prefetch" href="/assets/js/59.713eb32c.js"><link rel="prefetch" href="/assets/js/6.816080ba.js"><link rel="prefetch" href="/assets/js/60.fa1332f1.js"><link rel="prefetch" href="/assets/js/61.723b1598.js"><link rel="prefetch" href="/assets/js/62.6bbb1d25.js"><link rel="prefetch" href="/assets/js/7.755a946b.js"><link rel="prefetch" href="/assets/js/8.02c1d897.js"><link rel="prefetch" href="/assets/js/9.c7f08bfd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.26c94b8f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">YoungLe的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/interview/interview.html" class="nav-link">
+  前端面试题
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/JavaScript/js/deep-copy.html" class="nav-link">
+  前端三叉戟
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/ES6/es6-basic.html" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/React/ReactBasic/learn-react-through-the-todo-project.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/Webpack/webpack-config.html" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/typescript/typescript-basic-type.html" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/performance/" class="nav-link">
+  性能优化
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="算法" class="dropdown-title"><span class="title">算法</span> <span class="arrow down"></span></button> <button type="button" aria-label="算法" class="mobile-dropdown-title"><span class="title">算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/Array/26-Remove-Duplicates-from-Sorted-Array.html" class="nav-link">
+  数组
+</a></li></ul></div></div><div class="nav-item"><a href="/handwriting/" class="nav-link">
+  手写系列
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><span class="title">博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="博客" class="mobile-dropdown-title"><span class="title">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/hackintosh/use-hackintool-custom-made-usb3.0.html" class="nav-link">
+  黑苹果
+</a></li><li class="dropdown-item"><!----> <a href="/blog/technology/use-hexo-build-blog.html" class="nav-link">
+  技术
+</a></li><li class="dropdown-item"><!----> <a href="/blog/skill/add-eslint-prettier-for-react.html" class="nav-link">
+  技巧
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/youngle316" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人项目" class="dropdown-title"><span class="title">个人项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人项目" class="mobile-dropdown-title"><span class="title">个人项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/youngle316/ASRock-Z370M-ITX-AC" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Z370-itx Hackintosh
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/interview/interview.html" class="nav-link">
+  前端面试题
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/JavaScript/js/deep-copy.html" class="nav-link">
+  前端三叉戟
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/ES6/es6-basic.html" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/React/ReactBasic/learn-react-through-the-todo-project.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/Webpack/webpack-config.html" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/typescript/typescript-basic-type.html" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/performance/" class="nav-link">
+  性能优化
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="算法" class="dropdown-title"><span class="title">算法</span> <span class="arrow down"></span></button> <button type="button" aria-label="算法" class="mobile-dropdown-title"><span class="title">算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/Array/26-Remove-Duplicates-from-Sorted-Array.html" class="nav-link">
+  数组
+</a></li></ul></div></div><div class="nav-item"><a href="/handwriting/" class="nav-link">
+  手写系列
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><span class="title">博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="博客" class="mobile-dropdown-title"><span class="title">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/hackintosh/use-hackintool-custom-made-usb3.0.html" class="nav-link">
+  黑苹果
+</a></li><li class="dropdown-item"><!----> <a href="/blog/technology/use-hexo-build-blog.html" class="nav-link">
+  技术
+</a></li><li class="dropdown-item"><!----> <a href="/blog/skill/add-eslint-prettier-for-react.html" class="nav-link">
+  技巧
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/youngle316" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人项目" class="dropdown-title"><span class="title">个人项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人项目" class="mobile-dropdown-title"><span class="title">个人项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/youngle316/ASRock-Z370M-ITX-AC" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Z370-itx Hackintosh
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>ES6</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/frontend/ES6/es6-basic.html" class="sidebar-link">ES6</a></li><li><a href="/frontend/ES6/webpack-config-es6-enviroment.html" aria-current="page" class="active sidebar-link">基于webpack的编译ES6的环境配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/frontend/ES6/webpack-config-es6-enviroment.html#_1-安装node-js" class="sidebar-link">1. 安装Node.js</a></li><li class="sidebar-sub-header"><a href="/frontend/ES6/webpack-config-es6-enviroment.html#_2-创建项目目录并安装webpack" class="sidebar-link">2. 创建项目目录并安装webpack</a></li><li class="sidebar-sub-header"><a href="/frontend/ES6/webpack-config-es6-enviroment.html#_3-babel-loader" class="sidebar-link">3. babel-loader</a></li><li class="sidebar-sub-header"><a href="/frontend/ES6/webpack-config-es6-enviroment.html#_4-htmlwebpackplugin" class="sidebar-link">4. HtmlWebpackPlugin</a></li><li class="sidebar-sub-header"><a href="/frontend/ES6/webpack-config-es6-enviroment.html#_5-webpack-dev-server" class="sidebar-link">5. webpack-dev-server</a></li><li class="sidebar-sub-header"><a href="/frontend/ES6/webpack-config-es6-enviroment.html#_6-总结" class="sidebar-link">6. 总结</a></li></ul></li><li><a href="/frontend/ES6/es6-let-and-const.html" class="sidebar-link">let和const</a></li><li><a href="/frontend/ES6/ES6-deconstruction-assignment.html" class="sidebar-link">解构赋值</a></li><li><a href="/frontend/ES6/es6-string-extension.html" class="sidebar-link">字符串的扩展</a></li><li><a href="/frontend/ES6/es6-num-extension.html" class="sidebar-link">数值的扩展</a></li><li><a href="/frontend/ES6/es6-function-extension.html" class="sidebar-link">函数的扩展</a></li><li><a href="/frontend/ES6/es6-array-extension.html" class="sidebar-link">数组的扩展</a></li><li><a href="/frontend/ES6/es6-object-extension.html" class="sidebar-link">对象的扩展</a></li><li><a href="/frontend/ES6/es6-symbol.html" class="sidebar-link">Symbol</a></li><li><a href="/frontend/ES6/es6-set-and-map.html" class="sidebar-link">Set和Map数据结构</a></li><li><a href="/frontend/ES6/es6-promise.html" class="sidebar-link">Promise对象</a></li><li><a href="/frontend/ES6/es6-class-basic.html" class="sidebar-link">Class的基本用法</a></li><li><a href="/frontend/ES6/es6-class-extends.html" class="sidebar-link">ES6—Class的继承</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="基于webpack的编译es6的环境配置"><a href="#基于webpack的编译es6的环境配置" class="header-anchor">#</a> 基于webpack的编译ES6的环境配置</h1> <blockquote><p>目前现代浏览器对ES6语法的支持可以达到98%，但是还有部分浏览器不支持ES6，所以就需要将ES6编译为所以浏览器能支持的语法。这时就需要Babel了，作为编写下一代JavaScript的编译器，可以和很多工具配合使用来编译ES6。在这篇文章下记录一下使用webpack和babel-loader来编译ES6。</p></blockquote> <p>一个简单的基于<code>webpack</code>的ES6编译环境。已经上传<code>github</code>仓库。<a href="https://github.com/youngle316/ES6-webpack-Demo" target="_blank" rel="noopener noreferrer">地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="_1-安装node-js"><a href="#_1-安装node-js" class="header-anchor">#</a> 1. 安装Node.js</h2> <p><a href="https://nodejs.org" target="_blank" rel="noopener noreferrer">Node.js官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="_2-创建项目目录并安装webpack"><a href="#_2-创建项目目录并安装webpack" class="header-anchor">#</a> 2. 创建项目目录并安装webpack</h2> <p>首先创建一个项目文件夹</p> <h3 id="_2-1-初始化"><a href="#_2-1-初始化" class="header-anchor">#</a> 2.1 初始化</h3> <p>根目录下在终端中输入：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">npm</span> init -y
+// y是yes的缩写，相当于输入 <span class="token function">npm</span> init 一路回车
+</code></pre></div><p>根目录下会生成一个<code>package.json</code>文件，里面包含着项目的信息。</p> <h3 id="_2-2-安装webpack"><a href="#_2-2-安装webpack" class="header-anchor">#</a> 2.2 安装webpack</h3> <p>别人写的再好，都不如自己看文档，文档写的更详细，<a href="https://webpack.js.org/concepts/" target="_blank" rel="noopener noreferrer">webpack官方文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p> <p>在终端中输入</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">npm</span> <span class="token function">install</span> webpack webpack-cli --save-dev
+// 表示在本地安装webpack
+</code></pre></div><p>会在根目录生成一个<code>node_modules</code>文件夹。</p> <p>不推荐全局安装。如果你电脑有多个项目，使用的是不同版本的<code>webpack</code>，在运行的时候，是先去找全局的<code>webpack</code>，版本不一样的话会有问题出现。</p> <p><strong>推荐</strong>：使用本地安装，使每个项目都有独立的包，不受全局包的影响，方便项目的移动，复制和打包。</p> <h3 id="_2-3-使用webpack"><a href="#_2-3-使用webpack" class="header-anchor">#</a> 2.3 使用webpack</h3> <p>项目目录</p> <div class="language-shell extra-class"><pre class="language-shell"><code>   ES6-Note
+   <span class="token operator">|</span>- /node_modules
+   <span class="token operator">|</span>- package.json
++  <span class="token operator">|</span>- webpack.config.js  // webpack配置文件
++  <span class="token operator">|</span>- /src  // 根目录
++    <span class="token operator">|</span>- /css  // 放CSS文件
++  <span class="token operator">|</span>- /js  // 放JS文件
++    <span class="token operator">|</span>- index.js  
++    <span class="token operator">|</span>- /view  // 放HTML文件
++      <span class="token operator">|</span>- index.html
+</code></pre></div><p>webpack.config.js</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 模式，使用开发模式，</span>
+  <span class="token comment">//如果是要上线，使用'production'，会对代码进行压缩</span>
+  mode<span class="token operator">:</span> <span class="token string">'development'</span><span class="token punctuation">,</span>
+  <span class="token comment">// 入口文件</span>
+  entry<span class="token operator">:</span> <span class="token string">'./src/js/index.js'</span><span class="token punctuation">,</span>
+  <span class="token comment">// 出口</span>
+  output<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 打包后的文件名</span>
+    filename<span class="token operator">:</span> <span class="token string">'js/main.js'</span><span class="token punctuation">,</span>
+    <span class="token comment">// 文件目录</span>
+    path<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>更多的configuration说明可以查看官方文档：<a href="https://webpack.js.org/configuration/" target="_blank" rel="noopener noreferrer">configuration docs<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><code>src/js/index.js</code></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 添加一段ES6语法的代码</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p><code>src/view/index.html</code></p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>zh-CN<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><code>package.json</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code>// 在scripts中加入以下代码
+<span class="token string">&quot;scripts&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;test&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;echo <span class="token entity" title="\&quot;">\&quot;</span>Error: no test specified<span class="token entity" title="\&quot;">\&quot;</span> &amp;&amp; exit 1&quot;</span>,
++    <span class="token string">&quot;build&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;webpack --config webpack.config.js&quot;</span> // 添加这行代码，
+<span class="token punctuation">}</span>,
+// 注：json文件中不能有注释
+</code></pre></div><p>在终端中执行</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">npm</span> run build
+</code></pre></div><p>执行这个命令，可以将入口文件打包到出口目录下，就会生成一个dist文件夹，目录结构如下</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token operator">|</span>- /dist
+  <span class="token operator">|</span>- /js
+  <span class="token operator">|</span>- main.js
+<span class="token operator">|</span>- /src
+</code></pre></div><p>可以看到main.js文件中包含了index.js的内容</p> <p><img src="https://s1.ax1x.com/2018/12/11/FY9Ard.png" alt="webpack"></p> <p>但是仍然有有两个问题</p> <ul><li><code>index.html</code>文件并没有被打包到<code>dist</code>中，</li> <li>打包后的<code>main.js</code>文件仍然是<code>let</code>并没有编译为所有浏览器支持的<code>var</code></li></ul> <p>接下来就来解决这两个问题。</p> <h2 id="_3-babel-loader"><a href="#_3-babel-loader" class="header-anchor">#</a> 3. babel-loader</h2> <p>使用<code>babel-loader</code>可以对JavaScript ES6语法进行编译。</p> <p><a href="https://webpack.js.org/loaders/babel-loader/" target="_blank" rel="noopener noreferrer">babel-loader<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><a href="https://babeljs.io/" target="_blank" rel="noopener noreferrer">babel官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h3 id="_3-1-安装"><a href="#_3-1-安装" class="header-anchor">#</a> 3.1 安装</h3> <blockquote><p>webpack 4.x | babel-loader 8.x | babel 7.x</p></blockquote> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">npm</span> <span class="token function">install</span> -D babel-loader @babel/core @babel/preset-env
+</code></pre></div><blockquote><p>webpack 4.x | babel-loader 7.x | babel 6.x</p></blockquote> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">npm</span> <span class="token function">install</span> -D babel-loader@7 babel-core babel-preset-env
+</code></pre></div><h3 id="_3-2-使用方式"><a href="#_3-2-使用方式" class="header-anchor">#</a> 3.2 使用方式</h3> <p>在<code>webpack.config.js</code>文件中添加</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+module<span class="token operator">:</span> <span class="token punctuation">{</span>
+  rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      test<span class="token operator">:</span> <span class="token regex">/\.m?js$/</span><span class="token punctuation">,</span>
+      exclude<span class="token operator">:</span> <span class="token regex">/(node_modules|bower_components)/</span><span class="token punctuation">,</span>
+      use<span class="token operator">:</span> <span class="token punctuation">{</span>
+        loader<span class="token operator">:</span> <span class="token string">'babel-loader'</span><span class="token punctuation">,</span>
+        options<span class="token operator">:</span> <span class="token punctuation">{</span>
+          presets<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'@babel/preset-env'</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>接着在终端中输入</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">npm</span> run build
+</code></pre></div><p>可以看到，在main.js中ES6的语法已经被编译为ES5的语法了。</p> <p><img src="https://s1.ax1x.com/2018/12/11/FYVfr8.png" alt="babel-loader"></p> <p>但是<code>index.html</code>仍然没有被打包到<code>dist</code>中，我们可以手动在<code>dist</code>下创建一个html文件，只有在一个文件的时候可以使用这种方式，但是如果项目很大，文件很多。手动创建的话，就会很繁琐。这时候就需要一个<code>webpack</code>的一个插件了。叫做<code>HtmlWebpackPlugin</code>。</p> <h2 id="_4-htmlwebpackplugin"><a href="#_4-htmlwebpackplugin" class="header-anchor">#</a> 4. HtmlWebpackPlugin</h2> <p>这个插件可以将html文件进行打包，具体的使用方式可以看官方文档。</p> <p><a href="https://webpack.js.org/plugins/html-webpack-plugin/" target="_blank" rel="noopener noreferrer">HtmlWebpackPlugin<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h3 id="_4-1-安装"><a href="#_4-1-安装" class="header-anchor">#</a> 4.1 安装</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">npm</span> <span class="token function">install</span> --save-dev html-webpack-plugin
+</code></pre></div><h3 id="_4-2-使用方式"><a href="#_4-2-使用方式" class="header-anchor">#</a> 4.2 使用方式</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> HtmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'html-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    mode<span class="token operator">:</span> <span class="token string">'development'</span><span class="token punctuation">,</span>
+    entry<span class="token operator">:</span> <span class="token string">'./src/js/index.js'</span><span class="token punctuation">,</span>
+    output<span class="token operator">:</span> <span class="token punctuation">{</span>
+        filename<span class="token operator">:</span> <span class="token string">'js/main.js'</span><span class="token punctuation">,</span>
+        path<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">//plugins: [new HtmlWebpackPlugin()]//这个是默认，也可以添加一些参数</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            <span class="token comment">// 模板</span>
+            template<span class="token operator">:</span> <span class="token string">&quot;./src/view/index.html&quot;</span><span class="token punctuation">,</span>
+            <span class="token comment">// 输出的地址/dist/...</span>
+            filename<span class="token operator">:</span> <span class="token string">&quot;view/index.html&quot;</span><span class="token punctuation">,</span>
+            <span class="token comment">// 标题</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;ES6-Note&quot;</span><span class="token punctuation">,</span>
+            inject<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>在终端中输入</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">npm</span> run build
+</code></pre></div><p>会自动在这个目录下生成html文件，<code>dist/view/index.html</code>，而且会自动引入入口文件打包生成的js文件。</p> <p><img src="https://s1.ax1x.com/2018/12/11/FYeG11.png" alt="HtmlWebapckPlugin"></p> <p>到此，使用<code>webpack</code>和<code>babel-loader</code>编译<code>ES6</code>已经成功了。</p> <p>可是确有一点问题，就是不能自动编译，每次修改完原js文件需要再次打包。这是我们就需要一个<code>webpack</code>的一个服务了。<code>webpack-dev-server</code>。</p> <h2 id="_5-webpack-dev-server"><a href="#_5-webpack-dev-server" class="header-anchor">#</a> 5. webpack-dev-server</h2> <p><code>webpack-dev-server</code>提供一个简单的web服务，并且可以进行实时重新加载。</p> <h3 id="_5-1-安装"><a href="#_5-1-安装" class="header-anchor">#</a> 5.1 安装</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">npm</span> <span class="token function">install</span> --save-dev webpack-dev-server
+</code></pre></div><h3 id="_5-2-使用方式"><a href="#_5-2-使用方式" class="header-anchor">#</a> 5.2 使用方式</h3> <p>在<code>webpack.config.js</code>中添加</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    mode<span class="token operator">:</span> <span class="token string">'development'</span><span class="token punctuation">,</span>
+    <span class="token comment">// 入口</span>
+    entry<span class="token operator">:</span> <span class="token string">'./src/js/index.js'</span><span class="token punctuation">,</span>
+    <span class="token comment">// 出口</span>
+    output<span class="token operator">:</span> <span class="token punctuation">{</span>
+        filename<span class="token operator">:</span> <span class="token string">'js/main.js'</span><span class="token punctuation">,</span>
+        <span class="token comment">// 文件目录</span>
+        path<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    model<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token operator">+</span>    devServer<span class="token operator">:</span> <span class="token punctuation">{</span>
+<span class="token operator">+</span>        contentBase<span class="token operator">:</span> <span class="token string">'./dist'</span>
+<span class="token operator">+</span>    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>在<code>package.json</code>中添加</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token string">&quot;scripts&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+<span class="token string">&quot;test&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;echo <span class="token entity" title="\&quot;">\&quot;</span>Error: no test specified<span class="token entity" title="\&quot;">\&quot;</span> &amp;&amp; exit 1&quot;</span>,
+<span class="token string">&quot;build&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;webpack --config webpack.config.js&quot;</span>,
++ <span class="token string">&quot;start&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;webpack-dev-server&quot;</span>
+<span class="token punctuation">}</span>,
+</code></pre></div><p>在终端中输入</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">npm</span> run start
+</code></pre></div><p>然后再浏览器中输入<code>localhost:8080</code>，就可以创建的本地服务器。</p> <p>比如将<code>src/js/index.js</code>改为<code>let a = 30</code>。服务器会自动打包并且浏览器会自动刷新，就可以在<code>console</code>中看到10变为了30。</p> <p><code>ctrl + c</code>可以关闭服务器。</p> <h2 id="_6-总结"><a href="#_6-总结" class="header-anchor">#</a> 6. 总结</h2> <p>综上，通过上面的一系列步骤就可以创建一个最基本的ES6的编译环境。还有很多的工具可以来编译ES6。在<code>babel</code>官网中列出了很多的工具。<code>webpack</code>只是其中一种。</p> <p><img src="https://s1.ax1x.com/2018/12/11/FYunnP.png" alt="babel"></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">9/7/2020, 2:18:20 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/frontend/ES6/es6-basic.html" class="prev">
+        ES6
+      </a></span> <span class="next"><a href="/frontend/ES6/es6-let-and-const.html">
+        let和const
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><div></div></div></div>
+    <script src="/assets/js/app.1bdf300f.js" defer></script><script src="/assets/js/2.82349a55.js" defer></script><script src="/assets/js/34.d45fb76a.js" defer></script>
+  </body>
+</html>

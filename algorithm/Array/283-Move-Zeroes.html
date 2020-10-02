@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>283. 移动零 | YoungLe的博客</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="记录学习路上的点点滴滴">
+    <link rel="preload" href="/assets/css/0.styles.26c94b8f.css" as="style"><link rel="preload" href="/assets/js/app.1bdf300f.js" as="script"><link rel="preload" href="/assets/js/2.82349a55.js" as="script"><link rel="preload" href="/assets/js/11.bbed2d26.js" as="script"><link rel="prefetch" href="/assets/js/10.6cc9b3f4.js"><link rel="prefetch" href="/assets/js/12.bc055c47.js"><link rel="prefetch" href="/assets/js/13.00f6792f.js"><link rel="prefetch" href="/assets/js/14.bfaa6883.js"><link rel="prefetch" href="/assets/js/15.760f6750.js"><link rel="prefetch" href="/assets/js/16.7d3ea788.js"><link rel="prefetch" href="/assets/js/17.5a06d58d.js"><link rel="prefetch" href="/assets/js/18.e14a7fca.js"><link rel="prefetch" href="/assets/js/19.cc576287.js"><link rel="prefetch" href="/assets/js/20.85987309.js"><link rel="prefetch" href="/assets/js/21.07415e4a.js"><link rel="prefetch" href="/assets/js/22.d29797ef.js"><link rel="prefetch" href="/assets/js/23.1955b7f3.js"><link rel="prefetch" href="/assets/js/24.78e02f69.js"><link rel="prefetch" href="/assets/js/25.0c13be5e.js"><link rel="prefetch" href="/assets/js/26.9b3f496e.js"><link rel="prefetch" href="/assets/js/27.1d7bfdbb.js"><link rel="prefetch" href="/assets/js/28.b7ab2e46.js"><link rel="prefetch" href="/assets/js/29.756db6fc.js"><link rel="prefetch" href="/assets/js/3.77baa758.js"><link rel="prefetch" href="/assets/js/30.095c40e0.js"><link rel="prefetch" href="/assets/js/31.509ba86e.js"><link rel="prefetch" href="/assets/js/32.609d4df3.js"><link rel="prefetch" href="/assets/js/33.c9ee8cff.js"><link rel="prefetch" href="/assets/js/34.d45fb76a.js"><link rel="prefetch" href="/assets/js/35.dc4a4015.js"><link rel="prefetch" href="/assets/js/36.4c14807d.js"><link rel="prefetch" href="/assets/js/37.faa6d4aa.js"><link rel="prefetch" href="/assets/js/38.7976991e.js"><link rel="prefetch" href="/assets/js/39.08e9ac63.js"><link rel="prefetch" href="/assets/js/4.d729705c.js"><link rel="prefetch" href="/assets/js/40.b4692119.js"><link rel="prefetch" href="/assets/js/41.24ba5520.js"><link rel="prefetch" href="/assets/js/42.53d91651.js"><link rel="prefetch" href="/assets/js/43.213c1b8e.js"><link rel="prefetch" href="/assets/js/44.b762d3e6.js"><link rel="prefetch" href="/assets/js/45.24076f7e.js"><link rel="prefetch" href="/assets/js/46.cf7ddf0a.js"><link rel="prefetch" href="/assets/js/47.972c7130.js"><link rel="prefetch" href="/assets/js/48.112dbf31.js"><link rel="prefetch" href="/assets/js/49.1984dfaf.js"><link rel="prefetch" href="/assets/js/5.3712046a.js"><link rel="prefetch" href="/assets/js/50.28485bdb.js"><link rel="prefetch" href="/assets/js/51.cef03a47.js"><link rel="prefetch" href="/assets/js/52.b0d637f7.js"><link rel="prefetch" href="/assets/js/53.83955275.js"><link rel="prefetch" href="/assets/js/54.b117ee9a.js"><link rel="prefetch" href="/assets/js/55.d20659ca.js"><link rel="prefetch" href="/assets/js/56.4f8523e9.js"><link rel="prefetch" href="/assets/js/57.ef6c07b9.js"><link rel="prefetch" href="/assets/js/58.07ea91a2.js"><link rel="prefetch" href="/assets/js/59.713eb32c.js"><link rel="prefetch" href="/assets/js/6.816080ba.js"><link rel="prefetch" href="/assets/js/60.fa1332f1.js"><link rel="prefetch" href="/assets/js/61.723b1598.js"><link rel="prefetch" href="/assets/js/62.6bbb1d25.js"><link rel="prefetch" href="/assets/js/7.755a946b.js"><link rel="prefetch" href="/assets/js/8.02c1d897.js"><link rel="prefetch" href="/assets/js/9.c7f08bfd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.26c94b8f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">YoungLe的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/interview/interview.html" class="nav-link">
+  前端面试题
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/JavaScript/js/deep-copy.html" class="nav-link">
+  前端三叉戟
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/ES6/es6-basic.html" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/React/ReactBasic/learn-react-through-the-todo-project.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/Webpack/webpack-config.html" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/typescript/typescript-basic-type.html" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/performance/" class="nav-link">
+  性能优化
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="算法" class="dropdown-title"><span class="title">算法</span> <span class="arrow down"></span></button> <button type="button" aria-label="算法" class="mobile-dropdown-title"><span class="title">算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/Array/26-Remove-Duplicates-from-Sorted-Array.html" class="nav-link">
+  数组
+</a></li></ul></div></div><div class="nav-item"><a href="/handwriting/" class="nav-link">
+  手写系列
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><span class="title">博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="博客" class="mobile-dropdown-title"><span class="title">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/hackintosh/use-hackintool-custom-made-usb3.0.html" class="nav-link">
+  黑苹果
+</a></li><li class="dropdown-item"><!----> <a href="/blog/technology/use-hexo-build-blog.html" class="nav-link">
+  技术
+</a></li><li class="dropdown-item"><!----> <a href="/blog/skill/add-eslint-prettier-for-react.html" class="nav-link">
+  技巧
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/youngle316" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人项目" class="dropdown-title"><span class="title">个人项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人项目" class="mobile-dropdown-title"><span class="title">个人项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/youngle316/ASRock-Z370M-ITX-AC" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Z370-itx Hackintosh
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/interview/interview.html" class="nav-link">
+  前端面试题
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/JavaScript/js/deep-copy.html" class="nav-link">
+  前端三叉戟
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/ES6/es6-basic.html" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/React/ReactBasic/learn-react-through-the-todo-project.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/Webpack/webpack-config.html" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/typescript/typescript-basic-type.html" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/performance/" class="nav-link">
+  性能优化
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="算法" class="dropdown-title"><span class="title">算法</span> <span class="arrow down"></span></button> <button type="button" aria-label="算法" class="mobile-dropdown-title"><span class="title">算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/algorithm/Array/26-Remove-Duplicates-from-Sorted-Array.html" class="nav-link">
+  数组
+</a></li></ul></div></div><div class="nav-item"><a href="/handwriting/" class="nav-link">
+  手写系列
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><span class="title">博客</span> <span class="arrow down"></span></button> <button type="button" aria-label="博客" class="mobile-dropdown-title"><span class="title">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/hackintosh/use-hackintool-custom-made-usb3.0.html" class="nav-link">
+  黑苹果
+</a></li><li class="dropdown-item"><!----> <a href="/blog/technology/use-hexo-build-blog.html" class="nav-link">
+  技术
+</a></li><li class="dropdown-item"><!----> <a href="/blog/skill/add-eslint-prettier-for-react.html" class="nav-link">
+  技巧
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/youngle316" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人项目" class="dropdown-title"><span class="title">个人项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="个人项目" class="mobile-dropdown-title"><span class="title">个人项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/youngle316/ASRock-Z370M-ITX-AC" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Z370-itx Hackintosh
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>数组</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/Array/26-Remove-Duplicates-from-Sorted-Array.html" class="sidebar-link">26. 删除排序数组中的重复项</a></li><li><a href="/algorithm/Array/66-Plus-One.html" class="sidebar-link">66. 加一</a></li><li><a href="/algorithm/Array/122-Best-Time-to-Buy-and-Sell-Stock-II.html" class="sidebar-link">122. 买卖股票的最佳时机 II</a></li><li><a href="/algorithm/Array/136-Single-Number.html" class="sidebar-link">136. 只出现一次的数字</a></li><li><a href="/algorithm/Array/189-Rotate-Array.html" class="sidebar-link">189. 旋转数组</a></li><li><a href="/algorithm/Array/217-Contains-Duplicate.html" class="sidebar-link">217. 存在重复元素</a></li><li><a href="/algorithm/Array/283-Move-Zeroes.html" aria-current="page" class="active sidebar-link">283. 移动零</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/algorithm/Array/283-Move-Zeroes.html#题目" class="sidebar-link">题目</a></li><li class="sidebar-sub-header"><a href="/algorithm/Array/283-Move-Zeroes.html#解题思路" class="sidebar-link">解题思路</a></li></ul></li><li><a href="/algorithm/Array/350-Intersection-of-Two-Arrays-II.html" class="sidebar-link">350. 两个数组的交集 II</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="_283-移动零"><a href="#_283-移动零" class="header-anchor">#</a> 283. 移动零</h1> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>相关标签： 数组 | 双指针</p></div> <h2 id="题目"><a href="#题目" class="header-anchor">#</a> 题目</h2> <p>给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。</p> <p><strong>示例:</strong></p> <div class="language-text extra-class"><pre class="language-text"><code>输入: [0,1,0,3,12]
+输出: [1,3,12,0,0]
+</code></pre></div><p><strong>说明:</strong></p> <p>必须在原数组上操作，不能拷贝额外的数组。
+尽量减少操作次数。</p> <h2 id="解题思路"><a href="#解题思路" class="header-anchor">#</a> 解题思路</h2> <h3 id="解法"><a href="#解法" class="header-anchor">#</a> 解法</h3> <p>使用双指针的方法，指针A指向非0的元素，另一个指针B指向每一个元素，来控制循环的次数。当元素等于0时，将元素从该位置移除，并在数组末尾添加一个元素0；如果不为0，则将指针A加一。每判断一次就将指针B加一。</p> <h3 id="代码"><a href="#代码" class="header-anchor">#</a> 代码</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> <span class="token function-variable function">moveZeroes</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">nums</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> pointer <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> countr <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>pointer <span class="token operator">&lt;=</span> nums<span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span> countr <span class="token operator">&lt;=</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>pointer<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      nums<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>pointer<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      nums<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      pointer<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    countr<span class="token operator">++</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> nums<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="时间复杂度"><a href="#时间复杂度" class="header-anchor">#</a> 时间复杂度</h3> <p><code>O(n)</code></p> <h3 id="空间复杂度"><a href="#空间复杂度" class="header-anchor">#</a> 空间复杂度</h3> <p><code>O(1)</code></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">9/18/2020, 11:34:28 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/algorithm/Array/217-Contains-Duplicate.html" class="prev">
+        217. 存在重复元素
+      </a></span> <span class="next"><a href="/algorithm/Array/350-Intersection-of-Two-Arrays-II.html">
+        350. 两个数组的交集 II
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><div></div></div></div>
+    <script src="/assets/js/app.1bdf300f.js" defer></script><script src="/assets/js/2.82349a55.js" defer></script><script src="/assets/js/11.bbed2d26.js" defer></script>
+  </body>
+</html>
